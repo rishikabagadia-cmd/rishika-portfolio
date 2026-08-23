@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary Meta Tags & SEO -->
+  <title>Rishika Bagadia — Graphic Designer & Creative Technologist</title>
+  <meta name="title" content="Rishika Bagadia — Graphic Designer & Creative Technologist">
+  <meta name="description" content="Portfolio of Rishika Bagadia, a Graphic Designer with 4+ years of experience in Branding, Social Media Design, Motion Graphics, Packaging, Meta Ads, and Video Editing based in Indore, India.">
+  <meta name="keywords" content="Rishika Bagadia, Graphic Designer, Indore, Branding, Motion Graphics, Meta Ads, Packaging Design, Video Editing, BFA Viva Institute">
+  <meta name="author" content="Rishika Bagadia">
+  <meta name="theme-color" content="#090A0E">
+
+  <!-- Open Graph / Facebook / WhatsApp / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rishikabagadia.design/">
+  <meta property="og:title" content="Rishika Bagadia — Graphic Designer Portfolio">
+  <meta property="og:description" content="Explore selected works in brand identity, packaging, motion graphics, and high-conversion social campaigns by Rishika Bagadia.">
+  <meta property="og:image" content="assets/projects/branding/aspirant.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Rishika Bagadia — Graphic Designer Portfolio">
+  <meta property="twitter:description" content="Explore selected works in brand identity, packaging, motion graphics, and high-conversion social campaigns.">
+  <meta property="twitter:image" content="assets/projects/branding/aspirant.jpg">
+
+  <!-- Favicon (Stylized Monogram 'RB') -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%23090A0E'/><circle cx='50' cy='50' r='42' stroke='%23F5B738' stroke-width='4' fill='none'/><text x='50%' y='58%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-weight='900' font-size='42' fill='%23F5B738'>RB</text></svg>">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/modal.css">
+</head>
+<body>
+
+  <!-- Ambient Light Mesh Background -->
+  <div class="ambient-glow-bg" aria-hidden="true">
+    <div class="glow-orb-1"></div>
+    <div class="glow-orb-2"></div>
+    <div class="noise-overlay"></div>
+  </div>
+
+  <!-- Custom Cursor Follower (Desktop Only) -->
+  <div id="custom-cursor" aria-hidden="true"></div>
+  <div id="cursor-dot" aria-hidden="true"></div>
+
+  <!-- ==========================================
+       SITE HEADER
+       ========================================== -->
+  <header class="site-header">
+    <div class="container header-container">
+      
+      <!-- Brand Monogram Logo -->
+      <a href="#" class="site-logo" aria-label="Rishika Bagadia Home">
+        <div class="logo-monogram">RB</div>
+        <div class="logo-text">
+          <span class="logo-name">Rishika Bagadia</span>
+          <span class="logo-sub">Graphic Designer</span>
+        </div>
+      </a>
+
+      <!-- Live Location & Time Badge -->
+      <div class="status-pill hide-on-mobile">
+        <span class="status-dot"></span>
+        <span>Indore, IN</span>
+        <span id="live-time-indore" style="opacity: 0.8;">--:-- IST</span>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="site-nav" aria-label="Main Navigation">
+        <ul class="nav-links-desktop">
+          <li><a href="#work" class="nav-link">Selected Work</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#skills" class="nav-link">Skills & Education</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions (Theme Picker + Resume) -->
+      <div class="header-actions">
+        <!-- Interactive Accent Palette Switcher -->
+        <div class="theme-picker" title="Change signature accent color">
+          <button class="palette-btn active" data-palette="amber" aria-label="Amber Gold Accent"></button>
+          <button class="palette-btn" data-palette="lime" aria-label="Acid Lime Accent"></button>
+          <button class="palette-btn" data-palette="violet" aria-label="Electric Violet Accent"></button>
+          <button class="palette-btn" data-palette="mono" aria-label="Monochrome Studio"></button>
+        </div>
+
+        <a href="assets/Rishika_Bagadia_Resume.pdf" download="Rishika_Bagadia_Resume.pdf" class="btn-secondary hide-on-mobile" aria-label="Download Resume PDF">
+          <span>Resume</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        </a>
+
+        <!-- Mobile Drawer Toggle Button -->
+        <button id="mobile-menu-toggle" class="menu-toggle-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <aside id="nav-drawer" class="nav-drawer" aria-label="Mobile Navigation">
+    <ul class="drawer-links">
+      <li><a href="#work" class="drawer-link">Selected Work</a></li>
+      <li><a href="#about" class="drawer-link">About</a></li>
+      <li><a href="#experience" class="drawer-link">Experience</a></li>
+      <li><a href="#skills" class="drawer-link">Skills & Education</a></li>
+      <li><a href="#contact" class="drawer-link">Contact</a></li>
+    </ul>
+    <div class="drawer-footer">
+      <a href="assets/Rishika_Bagadia_Resume.pdf" download="Rishika_Bagadia_Resume.pdf" class="btn-primary" style="width: 100%; margin-bottom: 1rem;">
+        <span>Download Resume PDF</span>
+      </a>
+      <p style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">
+        Indore, India • Available for Full-Time & Freelance
+      </p>
+    </div>
+  </aside>
+
+  <!-- ==========================================
+       HERO SECTION
+       ========================================== -->
+  <section class="hero-section" id="hero">
+    <div class="container hero-grid">
+      
+      <!-- Hero Copy -->
+      <div class="hero-content-col">
+        
+        <div class="hero-tagline-top reveal-on-scroll">
+          <span class="location-tag">Indore, India</span>
+          <span class="experience-tag">✦ 4+ Years Professional Craft</span>
+        </div>
+
+        <h1 class="hero-headline reveal-on-scroll reveal-delay-1">
+          Communicating Ideas <span class="text-gradient">Boldly & Creatively.</span>
+        </h1>
+
+        <p class="hero-bio reveal-on-scroll reveal-delay-2">
+          I'm <strong>Rishika Bagadia</strong>, a Graphic Designer crafting distinctive visual identities, high-converting social campaigns, motion graphics, and packaging. I believe design is more than visuals — it's about solving problems and moving brands forward.
+        </p>
+
+        <div class="hero-ctas reveal-on-scroll reveal-delay-3">
+          <a href="#work" class="btn-primary btn-lg">
+            <span>Explore Selected Work</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+          <a href="#contact" class="btn-secondary btn-lg">
+            <span>Let's Talk</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+
+        <!-- Quick Stats Matrix -->
+        <div class="hero-stats-row reveal-on-scroll reveal-delay-4">
+          <div class="stat-item">
+            <span class="stat-number">4+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">60+</span>
+            <span class="stat-label">Brand Assets</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">BFA</span>
+            <span class="stat-label">Applied Arts '24</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Hero Visual Showcase / Card -->
+      <div class="hero-visual-col reveal-on-scroll reveal-delay-2">
+        <div class="hero-visual-card">
+          <div class="visual-card-inner">
+            <div class="visual-preview-box">
+              <img src="assets/rishika_headshot.jpg" alt="Rishika Bagadia — Graphic Designer" loading="eager">
+            </div>
+            <div class="visual-card-footer">
+              <div>
+                <h4 class="visual-client-title">Rishika Bagadia</h4>
+                <span class="visual-client-sub">Graphic Designer • Indore, India</span>
+              </div>
+              <span class="visual-badge">Available 2026</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       MARQUEE TICKER
+       ========================================== -->
+  <div class="marquee-wrapper" aria-hidden="true">
+    <div id="marquee-track" class="marquee-track">
+      <!-- Generated dynamically by main.js -->
+    </div>
+  </div>
+
+  <!-- ==========================================
+       SELECTED WORK (CORE PORTFOLIO GRID)
+       ========================================== -->
+  <section class="section-work" id="work">
+    <div class="container">
+      
+      <!-- Section Header -->
+      <div class="section-header reveal-on-scroll">
+        <div class="section-title-wrap">
+          <span class="section-subtitle-tag">Portfolio Archive</span>
+          <h2 class="section-title">Selected Works</h2>
+        </div>
+        <div id="project-count-badge" class="project-count-badge">Loading projects...</div>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="filter-tabs-wrapper reveal-on-scroll reveal-delay-1" role="tablist" aria-label="Project Category Filters">
+        <button class="filter-pill active" data-filter="all" role="tab" aria-selected="true">All Works</button>
+        <button class="filter-pill" data-filter="branding" role="tab" aria-selected="false">Branding & Identity</button>
+        <button class="filter-pill" data-filter="product-design" role="tab" aria-selected="false">Product & Packaging</button>
+        <button class="filter-pill" data-filter="social-media" role="tab" aria-selected="false">Social Media & Meta Ads</button>
+        <button class="filter-pill" data-filter="motion-graphics" role="tab" aria-selected="false">Motion Graphics</button>
+        <button class="filter-pill" data-filter="video-editing" role="tab" aria-selected="false">Video Editing & Reels</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div id="projects-grid" class="projects-grid" aria-live="polite">
+        <!-- Rendered dynamically from js/projects-data.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       ABOUT & PHILOSOPHY SECTION
+       ========================================== -->
+  <section class="section-about" id="about">
+    <div class="container about-grid">
+      
+      <!-- Left: Portrait / Visual Badge -->
+      <div class="about-visual-col reveal-on-scroll">
+        <div class="about-portrait-card">
+          <div class="portrait-img-box">
+            <img src="assets/rishika_headshot.jpg" alt="Rishika Bagadia Portrait" class="about-headshot-img">
+          </div>
+          <div class="portrait-info">
+            <h3>Rishika Bagadia</h3>
+            <p>Graphic & Motion Designer</p>
+            <div style="margin-top: 1rem; font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">
+              Based in Indore, India • Available for Global Roles
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Biography & Philosophy -->
+      <div class="about-text-col reveal-on-scroll reveal-delay-1">
+        <div class="section-title-wrap" style="margin-bottom: 1.5rem;">
+          <span class="section-subtitle-tag">About Me</span>
+          <h2>Design as Clear Communication</h2>
+        </div>
+
+        <blockquote class="about-quote">
+          "I believe design is more than visuals — it's about communicating ideas clearly, purposefully, and creatively."
+        </blockquote>
+
+        <div class="about-paragraphs">
+          <p>
+            With over 4 years of hands-on experience spanning agency environments, fast-paced tech startups, and independent freelance contracts, I bridge the gap between creative visual artistry and strategic marketing performance.
+          </p>
+          <p>
+            Whether engineering conversion-optimized Meta ad creatives, structuring packaging box architecture from flat vector dielines, or animating kinetic motion reels in After Effects, I approach every project with meticulous typographic precision, bold compositional harmony, and an unwavering commitment to brand growth.
+          </p>
+        </div>
+
+        <!-- What I Do Pills -->
+        <div class="what-i-do-grid">
+          <div class="what-i-do-item"><span>◆</span> Brand Identities</div>
+          <div class="what-i-do-item"><span>◆</span> Meta Ad Creatives</div>
+          <div class="what-i-do-item"><span>◆</span> Motion Graphics</div>
+          <div class="what-i-do-item"><span>◆</span> Packaging & Labels</div>
+          <div class="what-i-do-item"><span>◆</span> Video Editing & Reels</div>
+          <div class="what-i-do-item"><span>◆</span> Vector Illustration</div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       EXPERIENCE SECTION
+       ========================================== -->
+  <section class="section-experience" id="experience">
+    <div class="container">
+      
+      <div class="section-header reveal-on-scroll" style="justify-content: center; text-align: center; margin-bottom: 4rem;">
+        <div class="section-title-wrap">
+          <span class="section-subtitle-tag">Track Record</span>
+          <h2 class="section-title">Work Experience</h2>
+        </div>
+      </div>
+
+      <!-- Timeline Component -->
+      <div id="experience-timeline" class="experience-timeline reveal-on-scroll reveal-delay-1">
+        <!-- Rendered dynamically from js/projects-data.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       EDUCATION & SKILLS SECTION
+       ========================================== -->
+  <section class="section-skills" id="skills">
+    <div class="container skills-education-grid">
+      
+      <!-- Skills & Software Column -->
+      <div class="skills-col reveal-on-scroll">
+        <h3 class="skills-column-title">
+          <span style="color: var(--accent);">✦</span> Core Competencies
+        </h3>
+        
+        <!-- Skill Pills Cloud -->
+        <div id="skills-pills-container" class="skills-pills-container">
+          <!-- Rendered dynamically -->
+        </div>
+
+        <h3 class="skills-column-title" style="margin-top: 2rem;">
+          <span style="color: var(--accent);">✦</span> Software & Tools
+        </h3>
+        
+        <!-- Tools Grid -->
+        <div id="tools-grid" class="tools-grid">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+
+      <!-- Education & Credentials Column -->
+      <div class="education-col reveal-on-scroll reveal-delay-1">
+        <h3 class="skills-column-title">
+          <span style="color: var(--accent);">✦</span> Academic Credentials
+        </h3>
+        
+        <div id="education-card-content" class="education-card">
+          <!-- Rendered dynamically from skillsData.education -->
+        </div>
+
+        <div style="margin-top: 2rem; background-color: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-lg); padding: 2rem;">
+          <h4 style="font-size: 1.1rem; margin-bottom: 0.75rem; color: var(--accent);">Design Philosophy</h4>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+            Rooted in classical applied art fundamentals from VIVA Institute of Applied Arts, paired with contemporary digital-first production workflows in Adobe Creative Cloud.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       CONTACT & HIRE ME SECTION
+       ========================================== -->
+  <section class="section-contact" id="contact">
+    <div class="container contact-box-grid">
+      
+      <!-- Left: Direct Details -->
+      <div class="contact-info-panel reveal-on-scroll">
+        <div class="section-title-wrap" style="margin-bottom: 1rem;">
+          <span class="section-subtitle-tag">Get In Touch</span>
+          <h2>Let's Create Something Remarkable.</h2>
+        </div>
+
+        <p>
+          I'm currently available for senior graphic design opportunities, freelance branding projects, motion graphics collaborations, and creative campaigns.
+        </p>
+
+        <div class="contact-direct-cards">
+          
+          <!-- Email Card with 1-click copy -->
+          <div class="contact-card-item">
+            <div class="contact-card-left">
+              <div class="contact-icon-bubble">✉</div>
+              <div>
+                <span class="contact-label">Email Address</span>
+                <div class="contact-val">rishikabagadia@gmail.com</div>
+              </div>
+            </div>
+            <button id="copy-email-btn" class="contact-action-btn" aria-label="Copy email address">
+              <span>Copy Email</span>
+            </button>
+          </div>
+
+          <!-- Phone & WhatsApp Card -->
+          <div class="contact-card-item">
+            <div class="contact-card-left">
+              <div class="contact-icon-bubble">☎</div>
+              <div>
+                <span class="contact-label">Phone / WhatsApp</span>
+                <div class="contact-val">+91 9699194682</div>
+              </div>
+            </div>
+            <a href="https://wa.me/919699194682" target="_blank" rel="noopener noreferrer" class="contact-action-btn" aria-label="Chat on WhatsApp">
+              <span>WhatsApp ↗</span>
+            </a>
+          </div>
+
+          <!-- Location Card -->
+          <div class="contact-card-item">
+            <div class="contact-card-left">
+              <div class="contact-icon-bubble">📍</div>
+              <div>
+                <span class="contact-label">Current Base</span>
+                <div class="contact-val">Indore, Madhya Pradesh, India</div>
+              </div>
+            </div>
+            <span class="contact-action-btn" style="pointer-events: none;">IST (UTC+5:30)</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Right: Interactive Contact Form -->
+      <div class="contact-form-col reveal-on-scroll reveal-delay-1">
+        <div class="contact-form-card">
+          <h3 style="font-size: 1.4rem; margin-bottom: 1.5rem;">Send a Direct Message</h3>
+          
+          <!-- Formspree endpoint (or direct fallback mailer) -->
+          <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" class="form-input" placeholder="e.g. Rahul Sharma" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="e.g. name@company.com" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="projectType">Project / Inquiry Type</label>
+              <select id="projectType" name="projectType" class="form-select">
+                <option value="Full Brand Identity">Full Brand Identity</option>
+                <option value="Meta Ads & Social Media">Meta Ads & Social Media Growth</option>
+                <option value="Motion Graphics & Video Editing">Motion Graphics & Video Editing</option>
+                <option value="Product & Packaging Design">Product & Packaging Design</option>
+                <option value="Full-Time / Contract Role">Full-Time / Contract Role</option>
+                <option value="Other Creative Inquiry">Other Creative Inquiry</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Project Details</label>
+              <textarea id="message" name="message" class="form-textarea" placeholder="Tell me about your brand goals, timeline, and vision..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary btn-lg" style="width: 100%;">
+              <span>Send Message</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
+
+            <div id="form-feedback" class="form-feedback" role="alert"></div>
+
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SITE FOOTER
+       ========================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h2>Rishika Bagadia</h2>
+          <p>Graphic Designer • Motion & Visual Artist</p>
+        </div>
+
+        <div class="footer-social-links">
+          <a href="mailto:rishikabagadia@gmail.com" class="social-btn" title="Send Email" aria-label="Email Rishika">✉</a>
+          <a href="https://wa.me/919699194682" target="_blank" rel="noopener noreferrer" class="social-btn" title="WhatsApp" aria-label="WhatsApp">💬</a>
+          <a href="#" class="social-btn" title="LinkedIn Profile" aria-label="LinkedIn">in</a>
+          <a href="#" class="social-btn" title="Behance Profile" aria-label="Behance">Bē</a>
+          <a href="#" class="social-btn" title="Instagram Profile" aria-label="Instagram">IG</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 Rishika Bagadia. All Rights Reserved. Crafted with passion & precision.
+        </div>
+        <button id="back-to-top" class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+          <span>Back to top</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg>
+        </button>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       CASE STUDY FULLSCREEN MODAL
+       ========================================== -->
+  <div id="project-modal" class="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-backdrop" aria-hidden="true"></div>
+    
+    <div class="modal-dialog-wrapper">
+      
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <div class="modal-header-meta">
+          <span id="modal-category" class="modal-category-tag">Category</span>
+          <span id="modal-index-counter" class="modal-counter">1 / 10</span>
+        </div>
+        <div class="modal-header-actions">
+          <button id="modal-prev-btn" class="modal-nav-btn" title="Previous project (Left Arrow)" aria-label="Previous project">←</button>
+          <button id="modal-next-btn" class="modal-nav-btn" title="Next project (Right Arrow)" aria-label="Next project">→</button>
+          <button id="modal-close-btn" class="modal-close-btn" title="Close (Esc)" aria-label="Close modal">✕</button>
+        </div>
+      </div>
+
+      <!-- Modal Body (Two Column) -->
+      <div class="modal-body">
+        
+        <!-- Left: Media Viewport & Thumbnails -->
+        <div class="modal-media-showcase">
+          <div id="modal-media-viewport" class="modal-media-viewport">
+            <!-- Dynamic Image / Video injected here -->
+          </div>
+          <div id="modal-thumbnails" class="modal-thumbnails">
+            <!-- Dynamic Thumbnails injected here -->
+          </div>
+        </div>
+
+        <!-- Right: Case Study Information -->
+        <div class="modal-details-pane">
+          <h2 id="modal-title" class="modal-project-title">Project Title</h2>
+          
+          <div class="modal-meta-grid">
+            <div class="modal-meta-item">
+              <span class="modal-meta-label">Client</span>
+              <span id="modal-client" class="modal-meta-value">Client Name</span>
+            </div>
+            <div class="modal-meta-item">
+              <span class="modal-meta-label">Year</span>
+              <span id="modal-year" class="modal-meta-value">2026</span>
+            </div>
+          </div>
+
+          <p id="modal-summary" class="modal-summary-text">Short project highlight summary.</p>
+          <p id="modal-desc" class="modal-desc-text">Detailed breakdown of problem, process, and creative execution.</p>
+
+          <div>
+            <h4 class="modal-section-heading">Key Deliverables</h4>
+            <ul id="modal-deliverables" class="modal-deliverables-list"></ul>
+          </div>
+
+          <div>
+            <h4 class="modal-section-heading">Tools Used</h4>
+            <div id="modal-tools" class="modal-tools-row"></div>
+          </div>
+
+          <div class="modal-cta-box">
+            <a href="#contact" class="btn-primary" onclick="document.getElementById('modal-close-btn').click();" style="width: 100%;">
+              <span>Inquire About Similar Work</span>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Standalone High Performance Script (Works on file:// and http://) -->
+  <script src="js/app.js"></script>
+</body>
+</html>

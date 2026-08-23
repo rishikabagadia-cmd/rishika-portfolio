@@ -1,0 +1,14 @@
+# OS & Editor files
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
+
+# Media files exceeding GitHub's strict 100MB file limit
+# (Preserved locally in your D: drive)
+assets/projects/vedio editing/website.mp4
+assets/projects/vedio editing/social media_1.mp4
+assets/projects/vedio editing/diesel.mp4
+extract_img.ps1
+test_winrt.ps1
+test_server.ps1
