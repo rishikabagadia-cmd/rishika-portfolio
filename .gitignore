@@ -1,14 +1,19 @@
-# OS & Editor files
+﻿# OS and Editor files
 .DS_Store
 Thumbs.db
 *.tmp
 *.log
+.vscode/
+.idea/
 
-# Media files exceeding GitHub's strict 100MB file limit
-# (Preserved locally in your D: drive)
-assets/projects/vedio editing/website.mp4
-assets/projects/vedio editing/social media_1.mp4
-assets/projects/vedio editing/diesel.mp4
-extract_img.ps1
-test_winrt.ps1
-test_server.ps1
+# Scratch & test scripts
+*.ps1
+
+# Large raw video renders (>90MB) exceeding GitHub 100MB file limit
+assets/projects/product design/abstract.mp4
+assets/projects/product design/bts_monster.mp4
+assets/projects/product design/diesel.mp4
+assets/projects/vedio editing/
+assets/projects/video editing/podcast_interview_reel.mp4
+assets/projects/video editing/digital_platform_promo_reel.mp4
+assets/projects/video editing/social_media_agency_reel.mp4
