@@ -596,7 +596,7 @@ export const projects = [
   {
     id: "podcast-reels-video-editing",
     title: "Podcast & Short-Form Video Reels Suite — Multi-Client Edits",
-    client: "Various Clients (Studio Podcast, Astrologer Monika, Digital Platform & Social Media Agency)",
+    client: "Various Commercial Clients (In-Studio Podcasts, Web Platforms & Social Media Agencies)",
     year: "2024–2025",
     category: "social-media",
     categoryLabel: "Podcast & Short-Form Video Editing",
@@ -608,8 +608,7 @@ export const projects = [
     media: [
       { type: "video", src: "assets/projects/video editing/podcast_interview_reel.mp4", caption: "Client 1: In-Studio Podcast & Thought-Leadership Interview Reel (Dynamic Multi-Cam Pacing & Sound Bites)" },
       { type: "video", src: "assets/projects/video editing/social_media_agency_reel.mp4", caption: "Client 2: Social Media Agency Commercial Showcase Reel (High-Pace Visual Rhythm & Sound FX)" },
-      { type: "video", src: "assets/projects/video editing/digital_platform_promo_reel.mp4", caption: "Client 3: Digital Platform & Web Product Promo Video (Sleek UI Motion & Seamless Transitions)" },
-      { type: "video", src: "assets/projects/video editing/astrologer_monika_podcast_reel.mp4", caption: "Client 4: Astrologer Monika — High-Engagement Short-Form Video Reel (Kinetic Captions & B-Roll)" }
+      { type: "video", src: "assets/projects/video editing/digital_platform_promo_reel.mp4", caption: "Client 3: Digital Platform & Web Product Promo Video (Sleek UI Motion & Seamless Transitions)" }
     ],
     summary: "Professional post-production suite for high-retention podcast video edits, viral short-form reels, and commercial promotional videos across diverse clients.",
     description: "Conceptualized, paced, and edited high-engagement video reels and studio podcast episodes for diverse brands and creators.\n\nPOST-PRODUCTION & EDITING HIGHLIGHTS:\n• Multi-Cam Podcast Pacing: Edited full interview dialogues with seamless punch-in camera switches, ambient noise reduction, and crisp voice equalization.\n• High-Retention Short-Form Hooks: Engineered the first 3-second hook with motion titles, dynamic text popups, and kinetic sound effects to maximize viewer watch-time.\n• Animated Typography & Word-by-Word Captions: Crafted custom-styled subtitles styled to the creator's brand identity with highlight effects.\n• Motion B-Roll & Visual Accents: Integrated relevant stock overlays, screen recordings, sound effects, and color grading for a polished broadcast finish.",
