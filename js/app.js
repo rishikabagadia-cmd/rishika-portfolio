@@ -931,6 +931,10 @@
     renderProjects(activeCategory);
 
     const filterBtns = document.querySelectorAll('.filter-pill');
+    const grid = document.getElementById('projects-grid');
+    const prevBtn = document.getElementById('work-carousel-prev');
+    const nextBtn = document.getElementById('work-carousel-next');
+
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         filterBtns.forEach(b => {
@@ -941,8 +945,21 @@
         btn.setAttribute('aria-selected', 'true');
         activeCategory = btn.getAttribute('data-filter');
         renderProjects(activeCategory);
+        if (grid) grid.scrollTo({ left: 0, behavior: 'smooth' });
       });
     });
+
+    if (prevBtn && nextBtn && grid) {
+      prevBtn.addEventListener('click', () => {
+        const scrollAmount = grid.clientWidth * 0.95;
+        grid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      });
+
+      nextBtn.addEventListener('click', () => {
+        const scrollAmount = grid.clientWidth * 0.95;
+        grid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      });
+    }
   }
 
   function renderProjects(category) {
