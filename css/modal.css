@@ -348,20 +348,91 @@
   gap: 1rem;
 }
 
-@media (max-width: 600px) {
-  .project-modal {
-    padding: 0.5rem;
-  }
-  .modal-dialog-wrapper {
-    max-height: 96vh;
-  }
-  .modal-header {
-    padding: 1rem 1.25rem;
+@media (max-width: 900px) {
+  .modal-body {
+    grid-template-columns: 1fr;
+    max-height: calc(90vh - 75px);
   }
   .modal-media-showcase {
+    border-right: none;
+    border-bottom: 1px solid var(--border-subtle);
     padding: 1.25rem;
   }
+  .modal-media-viewport {
+    min-height: 240px;
+    max-height: 420px;
+  }
   .modal-details-pane {
-    padding: 1.5rem 1.25rem;
+    padding: 1.5rem 1.25rem 2.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .project-modal {
+    padding: 0.35rem;
+  }
+  .modal-dialog-wrapper {
+    max-height: 98vh;
+    border-radius: 14px;
+  }
+  .modal-header {
+    padding: 0.85rem 1rem;
+  }
+  .modal-badge-cat {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.6rem;
+  }
+  .modal-counter {
+    font-size: 0.75rem;
+  }
+  .modal-nav-btn, .modal-close-btn {
+    width: 34px;
+    height: 34px;
+  }
+  .modal-media-showcase {
+    padding: 0.85rem;
+    gap: 1rem;
+  }
+  .modal-media-viewport {
+    min-height: 200px;
+    max-height: 340px;
+  }
+  .modal-video-player {
+    max-height: 320px;
+  }
+  .thumb-btn {
+    width: 58px;
+    height: 44px;
+  }
+  .modal-details-pane {
+    padding: 1.25rem 1rem 2rem;
+    gap: 1.25rem;
+  }
+  .modal-project-title {
+    font-size: 1.35rem;
+  }
+  .modal-meta-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+  .meta-item-label {
+    font-size: 0.7rem;
+  }
+  .meta-item-val {
+    font-size: 0.85rem;
+  }
+  .modal-body-p {
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+  .modal-cta-box {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .modal-cta-box .btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
   }
 }
