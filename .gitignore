@@ -9,7 +9,7 @@ Thumbs.db
 # Scratch & test scripts
 *.ps1
 
-# Large raw video renders (>90MB) exceeding GitHub 100MB file limit
+# Large raw video renders (>50MB) to stay well below GitHub limits
 assets/projects/product design/abstract.mp4
 assets/projects/product design/bts_monster.mp4
 assets/projects/product design/diesel.mp4
@@ -17,3 +17,4 @@ assets/projects/vedio editing/
 assets/projects/video editing/podcast_interview_reel.mp4
 assets/projects/video editing/digital_platform_promo_reel.mp4
 assets/projects/video editing/social_media_agency_reel.mp4
+assets/projects/video editing/astrologer_monika_podcast_reel.mp4
