@@ -2331,6 +2331,17 @@ button, input, textarea, select { font-family: inherit; color: inherit; }
   .section-title {
     font-size: clamp(1.85rem, 7vw, 2.5rem);
   }
+  .mobile-swipe-hint {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    color: var(--accent);
+    text-align: center;
+    margin-top: -0.5rem;
+    margin-bottom: 1.25rem;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+  }
   .filter-bar {
     display: flex;
     overflow-x: auto;
@@ -2348,12 +2359,42 @@ button, input, textarea, select { font-family: inherit; color: inherit; }
     font-size: 0.8rem;
     padding: 0.45rem 1rem;
   }
+  
+  /* Horizontally Scrollable Projects Track on Mobile */
   .projects-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    gap: 1.25rem;
+    padding: 0.5rem 0.5rem 1.5rem;
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .projects-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .project-card {
+    flex: 0 0 84vw !important;
+    max-width: 320px !important;
+    scroll-snap-align: center;
+    cursor: default !important;
+    transition: none !important;
+  }
+  .project-card:hover {
+    transform: none !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4) !important;
+    border-color: var(--border-card) !important;
+  }
+  .project-card .card-overlay {
+    display: none !important;
   }
   .project-card-image {
-    height: 220px;
+    height: 200px;
   }
 
   /* About Section */
@@ -2465,6 +2506,10 @@ button, input, textarea, select { font-family: inherit; color: inherit; }
     width: 36px;
     height: 36px;
     font-size: 0.82rem;
+  }
+  .project-card {
+    flex: 0 0 86vw !important;
+    max-width: 290px !important;
   }
   .about-metrics-row {
     grid-template-columns: 1fr;

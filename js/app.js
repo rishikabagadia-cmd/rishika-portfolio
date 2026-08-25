@@ -756,6 +756,9 @@
   let filteredProjects = [...projects];
 
   function openModal(projectId) {
+    // Modal should only open on desktop / laptop / larger screens (> 768px)
+    if (window.innerWidth <= 768) return;
+
     const index = filteredProjects.findIndex(p => p.id === projectId);
     if (index === -1) return;
     
@@ -1002,8 +1005,10 @@
         </div>
       `;
 
-      card.addEventListener('click', () => {
-        openModal(project.id);
+      card.addEventListener('click', (e) => {
+        if (window.innerWidth > 768) {
+          openModal(project.id);
+        }
       });
 
       grid.appendChild(card);
