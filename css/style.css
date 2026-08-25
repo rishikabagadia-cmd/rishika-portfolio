@@ -2181,9 +2181,12 @@ button, input, textarea, select { font-family: inherit; color: inherit; }
   .container {
     padding: 0 1.5rem;
   }
+  .about-visual-col {
+    display: none !important; /* Avoid duplicate photo on mobile */
+  }
   .about-grid {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 1.5rem;
   }
   .contact-box-grid {
     grid-template-columns: 1fr;
