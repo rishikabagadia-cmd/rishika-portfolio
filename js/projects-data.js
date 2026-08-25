@@ -625,11 +625,10 @@ export const experienceData = [
     company: "The Simbolo Multimedia",
     location: "Indore, India",
     type: "Full-Time",
-    description: "Leading creative direction for social media creatives, high-converting Meta Ads, large-format marketing banners, pitch presentations, packaging systems, and bespoke logo designs for diverse national and international clients.",
+    description: "Leading visual design and creative direction across branding, packaging, and digital ad campaigns.",
     highlights: [
-      "Conceptualized & delivered 100+ high-ROI Meta ad creatives across e-commerce, real estate, and lifestyle.",
-      "Spearheaded packaging identity systems from initial vector dielines to final press proofs.",
-      "Refined brand communication strategies ensuring consistent visual storytelling across touchpoints."
+      "Brand identity systems & structural packaging dielines.",
+      "High-converting Meta ad creatives and social campaigns."
     ]
   },
   {
@@ -638,10 +637,10 @@ export const experienceData = [
     company: "Digihakk",
     location: "Indore, India",
     type: "Agency",
-    description: "Delivered a wide variety of multifaceted creative projects, specializing in high-engagement podcast reels, animated brand content, and multi-platform marketing assets.",
+    description: "Created high-engagement podcast reels, animated brand assets, and multi-platform marketing visuals.",
     highlights: [
-      "Produced viral short-form video reels and podcast clips with animated kinetic subtitles.",
-      "Designed dynamic social media assets with sharp focus on retention and community engagement."
+      "Edited podcast reels and short-form video content.",
+      "Designed high-retention social media visual systems."
     ]
   },
   {
@@ -650,10 +649,10 @@ export const experienceData = [
     company: "Aspirant Infotech",
     location: "Indore, India",
     type: "Internship",
-    description: "Produced engaging product reels, corporate brand videos, digital ad creatives, social media graphics, and clean visual design assets for technology clients.",
+    description: "Produced motion graphics, corporate video reels, and brand marketing collateral for tech clients.",
     highlights: [
-      "Created polished corporate motion graphics and product explainer videos.",
-      "Collaborated closely with marketing teams to translate complex technical briefs into clean visual collateral."
+      "Created motion design and product explainer videos.",
+      "Designed digital marketing creatives and pitch decks."
     ]
   },
   {
@@ -662,10 +661,10 @@ export const experienceData = [
     company: "Independent Practice",
     location: "Indore, India",
     type: "Freelance",
-    description: "Operated an independent design practice serving local businesses, startup founders, and referral clients across India and globally.",
+    description: "Delivered custom brand identities, packaging design, and social media campaigns for independent brands.",
     highlights: [
-      "Crafted full branding suites, logos, event posters, and social campaigns from concept to delivery.",
-      "Handled end-to-end client communication, timeline management, creative direction, and revision workflows."
+      "Full branding suites, logo systems, and packaging design.",
+      "End-to-end creative direction and client delivery."
     ]
   }
 ];
