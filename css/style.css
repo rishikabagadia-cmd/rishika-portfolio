@@ -1142,6 +1142,12 @@ button, input, textarea, select { font-family: inherit; color: inherit; }
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 0 16px rgba(140, 224, 26, 0.22);
 }
 
+/* Mobile Swipe Hint (Hidden on Desktop & Laptop) */
+.mobile-swipe-hint,
+.hide-on-desktop {
+  display: none !important;
+}
+
 /* Projects Grid */
 .projects-grid {
   display: grid;
@@ -2291,8 +2297,11 @@ button, input, textarea, select { font-family: inherit; color: inherit; }
   .section-title {
     font-size: clamp(1.85rem, 7vw, 2.5rem);
   }
+  .mobile-swipe-hint,
+  .hide-on-desktop {
+    display: block !important;
+  }
   .mobile-swipe-hint {
-    display: block;
     font-family: var(--font-mono);
     font-size: 0.76rem;
     color: var(--accent);
