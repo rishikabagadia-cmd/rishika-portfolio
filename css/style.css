@@ -88,7 +88,7 @@
   --text-highlight: #D4FF66;
 
   /* Fonts */
-  --font-display: 'Lufga', -apple-system, BlinkMacSystemFont, 'Montserrat', sans-serif;
+  --font-display: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-montserrat: 'Montserrat', sans-serif;
   --font-body: 'Plus Jakarta Sans', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
