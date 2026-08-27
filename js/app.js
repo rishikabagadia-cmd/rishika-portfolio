@@ -25,8 +25,8 @@
       coverImage: "assets/projects/product design/stranger things can1.jpeg",
       mediaType: "image",
       media: [
-        { type: "video", src: "assets/projects/product design/bts_monster.mp4", caption: "Behind The Scenes & Photoshop Compositing Motion Process" },
-        { type: "video", src: "assets/projects/product design/abstract.mp4", caption: "Kinetic Motion & Atmospheric 3D Particle Visuals" },
+        { type: "vimeo", src: "https://vimeo.com/1221285609", caption: "Behind The Scenes & Photoshop Compositing Motion Process" },
+        { type: "vimeo", src: "https://vimeo.com/1221285608", caption: "Kinetic Motion & Atmospheric 3D Particle Visuals" },
         { type: "image", src: "assets/projects/product design/stranger things can1.jpeg", caption: "Limited Edition Can 3D Showcase & Atmospheric Lighting" },
         { type: "image", src: "assets/projects/product design/stranger_things_can_flat_wrap.jpg", caption: "Full Flat Production Can Wrap & Regulatory Label Layout" },
         { type: "image", src: "assets/projects/product design/stranger_things_can_3d_mockup.jpg", caption: "3D Isometric Floating Can Studio Mockup" },
@@ -53,8 +53,8 @@
       coverImage: "assets/projects/product design/jacket design1.jpeg",
       mediaType: "image",
       media: [
-        { type: "video", src: "assets/projects/product design/diesel_intro.mp4", caption: "Chainsaw Man × Diesel — Cinematic Motion Teaser & Intro" },
-        { type: "video", src: "assets/projects/product design/diesel.mp4", caption: "Chainsaw Man × Diesel — Full Cinematic Motion Video Showcase" },
+        { type: "gdrive", src: "1Q0WXk1vBmAP2ERVZa_fXPgUco5i43VfM", caption: "Chainsaw Man × Diesel — Cinematic Motion Teaser & Intro" },
+        { type: "vimeo", src: "https://vimeo.com/1221282605", caption: "Chainsaw Man × Diesel — Full Cinematic Motion Video Showcase" },
         { type: "image", src: "assets/projects/product design/jacket design1.jpeg", caption: "Back Panel Statement Graphic & Atmospheric Studio Presentation" },
         { type: "image", src: "assets/projects/product design/chainsaw_man_jacket_back.jpg", caption: "High-Res Back Panel Artwork — 'Hunger Makes Hero'" },
         { type: "image", src: "assets/projects/product design/chainsaw_man_jacket_front.jpg", caption: "High-Res Front Denim View & Diesel Collar Tagging" },
@@ -608,9 +608,9 @@
       mediaType: "video",
       videoSrc: "assets/projects/video editing/podcast_interview_reel.mp4",
       media: [
-        { type: "video", src: "assets/projects/video editing/podcast_interview_reel.mp4", caption: "Client 1: In-Studio Podcast & Thought-Leadership Interview Reel (Dynamic Multi-Cam Pacing & Sound Bites)" },
-        { type: "video", src: "assets/projects/video editing/social_media_agency_reel.mp4", caption: "Client 2: Social Media Agency Commercial Showcase Reel (High-Pace Visual Rhythm & Sound FX)" },
-        { type: "video", src: "assets/projects/video editing/digital_platform_promo_reel.mp4", caption: "Client 3: Digital Platform & Web Product Promo Video (Sleek UI Motion & Seamless Transitions)" }
+        { type: "vimeo", src: "https://vimeo.com/1221699339", caption: "Client 1: In-Studio Podcast & Thought-Leadership Interview Reel (Dynamic Multi-Cam Pacing & Sound Bites)" },
+        { type: "vimeo", src: "https://vimeo.com/1221287006", caption: "Client 2: Social Media Agency Commercial Showcase Reel (High-Pace Visual Rhythm & Sound FX)" },
+        { type: "vimeo", src: "https://vimeo.com/1221699086", caption: "Client 3: Digital Platform & Web Product Promo Video (Sleek UI Motion & Seamless Transitions)" }
       ],
       summary: "Professional post-production suite for high-retention podcast video edits, viral short-form reels, and commercial promotional videos across diverse clients.",
       description: "Conceptualized, paced, and edited high-engagement video reels and studio podcast episodes for diverse brands and creators.\n\nPOST-PRODUCTION & EDITING HIGHLIGHTS:\n• Multi-Cam Podcast Pacing: Edited full interview dialogues with seamless punch-in camera switches, ambient noise reduction, and crisp voice equalization.\n• High-Retention Short-Form Hooks: Engineered the first 3-second hook with motion titles, dynamic text popups, and kinetic sound effects to maximize viewer watch-time.\n• Animated Typography & Word-by-Word Captions: Crafted custom-styled subtitles styled to the creator's brand identity with highlight effects.\n• Motion B-Roll & Visual Accents: Integrated relevant stock overlays, screen recordings, sound effects, and color grading for a polished broadcast finish.",
@@ -855,6 +855,34 @@
         ${currentItem.caption ? `<p class="media-caption">${currentItem.caption}</p>` : ''}
       `;
       mediaContainer.appendChild(videoWrap);
+    } else if (currentItem.type === 'vimeo') {
+      const videoWrap = document.createElement('div');
+      videoWrap.className = 'modal-video-wrap';
+      const match = currentItem.src.match(/vimeo\.com\/(\d+)/);
+      const vimeoId = match ? match[1] : currentItem.src;
+      videoWrap.innerHTML = `
+        <iframe src="https://player.vimeo.com/video/${vimeoId}?autoplay=1&loop=1&title=0&byline=0&portrait=0&muted=1" 
+                class="modal-video-player" 
+                style="width: 100%; height: 100%; border: none;"
+                allow="autoplay; fullscreen; picture-in-picture" 
+                allowfullscreen>
+        </iframe>
+        ${currentItem.caption ? `<p class="media-caption">${currentItem.caption}</p>` : ''}
+      `;
+      mediaContainer.appendChild(videoWrap);
+    } else if (currentItem.type === 'gdrive') {
+      const videoWrap = document.createElement('div');
+      videoWrap.className = 'modal-video-wrap';
+      videoWrap.innerHTML = `
+        <iframe src="https://drive.google.com/file/d/${currentItem.src}/preview" 
+                class="modal-video-player" 
+                style="width: 100%; height: 100%; border: none;"
+                allow="autoplay; fullscreen" 
+                allowfullscreen>
+        </iframe>
+        ${currentItem.caption ? `<p class="media-caption">${currentItem.caption}</p>` : ''}
+      `;
+      mediaContainer.appendChild(videoWrap);
     } else {
       const imgWrap = document.createElement('div');
       imgWrap.className = 'modal-image-wrap';
@@ -875,7 +903,7 @@
         thumb.className = `thumb-btn ${idx === currentMediaIndex ? 'active' : ''}`;
         thumb.setAttribute('aria-label', `Slide ${idx + 1}`);
         
-        if (m.type === 'video') {
+        if (m.type === 'video' || m.type === 'vimeo' || m.type === 'gdrive') {
           thumb.innerHTML = `<div style="width:100%;height:100%;background:#101422;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--accent);font-size:0.65rem;font-weight:700;gap:2px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg><span>Video</span></div>`;
         } else {
           thumb.innerHTML = `<img src="${m.src}" alt="Thumb ${idx + 1}">`;

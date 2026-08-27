@@ -119,6 +119,34 @@ function renderMediaGallery(project) {
       ${currentItem.caption ? `<p class="media-caption">${currentItem.caption}</p>` : ''}
     `;
     mediaContainer.appendChild(videoWrap);
+  } else if (currentItem.type === 'vimeo') {
+    const videoWrap = document.createElement('div');
+    videoWrap.className = 'modal-video-wrap';
+    const match = currentItem.src.match(/vimeo\.com\/(\d+)/);
+    const vimeoId = match ? match[1] : currentItem.src;
+    videoWrap.innerHTML = `
+      <iframe src="https://player.vimeo.com/video/${vimeoId}?autoplay=1&loop=1&title=0&byline=0&portrait=0&muted=1" 
+              class="modal-video-player" 
+              style="width: 100%; height: 100%; border: none;"
+              allow="autoplay; fullscreen; picture-in-picture" 
+              allowfullscreen>
+      </iframe>
+      ${currentItem.caption ? `<p class="media-caption">${currentItem.caption}</p>` : ''}
+    `;
+    mediaContainer.appendChild(videoWrap);
+  } else if (currentItem.type === 'gdrive') {
+    const videoWrap = document.createElement('div');
+    videoWrap.className = 'modal-video-wrap';
+    videoWrap.innerHTML = `
+      <iframe src="https://drive.google.com/file/d/${currentItem.src}/preview" 
+              class="modal-video-player" 
+              style="width: 100%; height: 100%; border: none;"
+              allow="autoplay; fullscreen" 
+              allowfullscreen>
+      </iframe>
+      ${currentItem.caption ? `<p class="media-caption">${currentItem.caption}</p>` : ''}
+    `;
+    mediaContainer.appendChild(videoWrap);
   } else {
     const imgWrap = document.createElement('div');
     imgWrap.className = 'modal-image-wrap';
@@ -140,7 +168,7 @@ function renderMediaGallery(project) {
       thumb.className = `thumb-btn ${idx === currentMediaIndex ? 'active' : ''}`;
       thumb.setAttribute('aria-label', `View slide ${idx + 1}`);
       
-      if (m.type === 'video') {
+      if (m.type === 'video' || m.type === 'vimeo' || m.type === 'gdrive') {
         thumb.innerHTML = `<span>▶ Video</span>`;
       } else {
         thumb.innerHTML = `<img src="${m.src}" alt="Thumb ${idx + 1}">`;

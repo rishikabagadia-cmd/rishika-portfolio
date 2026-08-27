@@ -1,6 +1,6 @@
 $port = 3000
 $prefix = "http://localhost:$port/"
-$root = "D:\rishika-portfolio"
+$root = $PSScriptRoot
 
 $listener = New-Object System.Net.HttpListener
 $listener.Prefixes.Add($prefix)
