@@ -2353,17 +2353,18 @@ button, input, textarea, select { font-family: inherit; color: inherit; }
     min-width: 270px !important;
     max-width: 320px !important;
     scroll-snap-align: start;
-    cursor: default !important;
-    transition: none !important;
+    cursor: pointer !important;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(140, 224, 26, 0.2);
+    transition: transform var(--transition-fast), border-color var(--transition-fast) !important;
+  }
+  .project-card:active {
+    transform: scale(0.98) !important;
+    border-color: var(--accent) !important;
   }
   .project-card:hover {
-    transform: none !important;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4) !important;
     border-color: var(--border-card) !important;
-  }
-  .project-card .card-overlay {
-    display: none !important;
   }
   .project-card-image {
     height: 200px;
