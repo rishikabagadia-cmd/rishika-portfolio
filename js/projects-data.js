@@ -620,7 +620,7 @@ export const projects = [
 export const experienceData = [
   {
     period: "2026 — Present",
-    role: "Senior Graphic Designer",
+    role: "Graphic Designer & Visualiser",
     company: "The Simbolo Multimedia",
     location: "Indore, India",
     type: "Full-Time",
