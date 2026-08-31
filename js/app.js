@@ -1354,29 +1354,112 @@
   }
 
   /* ==========================================================================
-     12. CONTACT FORM & ACTIONS
+     12. DYNAMIC PRIVACY-PROTECTED CONTACT ENGINE & SPAM DEFENSE
      ========================================================================== */
-  function initContactForm() {
-    const form = document.getElementById('contact-form');
-    const feedbackEl = document.getElementById('form-feedback');
-    const copyEmailBtn = document.getElementById('copy-email-btn');
+  const _0xContact = {
+    // Obfuscated credential chunks (decoded client-side to prevent static HTML scraping)
+    _e: ['cmlzaGlrYWJhZ2FkaWE=', 'Z21haWwuY29t'],
+    _p: ['Kzkx', 'OTY5OTE5NDY4Mg=='],
+    _w: 'OTE5Njk5MTk0Njgy',
 
-    if (copyEmailBtn) {
-      copyEmailBtn.addEventListener('click', async () => {
-        const email = 'rishikabagadia@gmail.com';
-        try {
-          await navigator.clipboard.writeText(email);
-          copyEmailBtn.innerHTML = `<span>✓ Copied to Clipboard!</span>`;
-          setTimeout(() => {
-            copyEmailBtn.innerHTML = `<span>Copy Email</span>`;
-          }, 2200);
-        } catch (err) {
-          window.location.href = `mailto:${email}`;
-        }
-      });
+    getEmail() {
+      try {
+        return `${atob(this._e[0])}@${atob(this._e[1])}`;
+      } catch (e) {
+        return 'rishikabagadia@gmail.com';
+      }
+    },
+
+    getPhoneDisplay() {
+      try {
+        const code = atob(this._p[0]);
+        const num = atob(this._p[1]);
+        return `${code} ${num.slice(0, 5)} ${num.slice(5)}`;
+      } catch (e) {
+        return '+91 96991 94682';
+      }
+    },
+
+    getPhoneRaw() {
+      try {
+        return `${atob(this._p[0])}${atob(this._p[1])}`;
+      } catch (e) {
+        return '+919699194682';
+      }
+    },
+
+    getWhatsAppUrl(msg = '') {
+      try {
+        const num = atob(this._w);
+        const textParam = msg ? `?text=${encodeURIComponent(msg)}` : '';
+        return `https://wa.me/${num}${textParam}`;
+      } catch (e) {
+        return 'https://wa.me/919699194682';
+      }
+    }
+  };
+
+  function initContactPrivacyAndActions() {
+    // Dynamically render obfuscated contact details in UI
+    const emailEl = document.getElementById('contact-email-text');
+    if (emailEl) {
+      emailEl.textContent = _0xContact.getEmail();
     }
 
+    const phoneEl = document.getElementById('contact-phone-text');
+    if (phoneEl) {
+      phoneEl.textContent = _0xContact.getPhoneDisplay();
+    }
+
+    // Dynamic contact button handlers (WhatsApp, Email compose, Copy, Call)
+    document.querySelectorAll('[data-contact-action]').forEach(btn => {
+      btn.addEventListener('click', async (e) => {
+        const action = btn.getAttribute('data-contact-action');
+        
+        if (action === 'whatsapp') {
+          e.preventDefault();
+          const waUrl = _0xContact.getWhatsAppUrl("Hi Rishika, I visited your portfolio and would like to discuss a creative project!");
+          window.open(waUrl, '_blank', 'noopener,noreferrer');
+        } 
+        else if (action === 'email') {
+          e.preventDefault();
+          window.location.href = `mailto:${_0xContact.getEmail()}`;
+        }
+        else if (action === 'call') {
+          e.preventDefault();
+          window.location.href = `tel:${_0xContact.getPhoneRaw()}`;
+        }
+        else if (action === 'copy-email') {
+          e.preventDefault();
+          const email = _0xContact.getEmail();
+          try {
+            await navigator.clipboard.writeText(email);
+            const originalHtml = btn.innerHTML;
+            btn.innerHTML = `<span>✓ Copied to Clipboard!</span>`;
+            setTimeout(() => {
+              btn.innerHTML = originalHtml;
+            }, 2200);
+          } catch (err) {
+            window.location.href = `mailto:${email}`;
+          }
+        }
+      });
+    });
+  }
+
+  function initContactForm() {
+    // Initialize privacy links and UI text
+    initContactPrivacyAndActions();
+
+    const form = document.getElementById('contact-form');
+    const feedbackEl = document.getElementById('form-feedback');
     if (!form) return;
+
+    // Record form initialization timestamp for anti-bot time-gate check
+    const startTimeInput = document.getElementById('_form_start_time');
+    if (startTimeInput) {
+      startTimeInput.value = Date.now().toString();
+    }
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -1384,58 +1467,129 @@
       const submitBtn = form.querySelector('button[type="submit"]');
       const originalBtnText = submitBtn.innerHTML;
       
+      // Clear previous feedback
+      if (feedbackEl) {
+        feedbackEl.style.display = 'none';
+        feedbackEl.className = 'form-feedback';
+      }
+
       submitBtn.disabled = true;
       submitBtn.innerHTML = `<span>Sending Message...</span>`;
 
       const formData = new FormData(form);
-      const name = formData.get('name');
-      const email = formData.get('email');
-      const projectType = formData.get('projectType') || 'Design Inquiry';
-      const message = formData.get('message');
+      const name = (formData.get('name') || '').trim();
+      const email = (formData.get('email') || '').trim();
+      const projectType = (formData.get('projectType') || 'Design Inquiry').trim();
+      const message = (formData.get('message') || '').trim();
+      const gotcha = (formData.get('_gotcha_company') || '').trim();
+      const startTime = formData.get('_form_start_time') || Date.now().toString();
+
+      // Client-side Honeypot Check: silently handle bot submissions
+      if (gotcha.length > 0) {
+        setTimeout(() => {
+          showFormSuccess();
+          form.reset();
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnText;
+        }, 1000);
+        return;
+      }
+
+      // Basic client-side validation
+      if (!name || !email || !message) {
+        showFormError('Please fill in all required fields.');
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnText;
+        return;
+      }
+
+      const payload = {
+        name,
+        email,
+        projectType,
+        message,
+        _gotcha_company: gotcha,
+        _form_start_time: startTime
+      };
 
       try {
-        const actionUrl = form.getAttribute('action');
-        if (actionUrl && !actionUrl.includes('YOUR_FORM_ID') && window.location.protocol.startsWith('http')) {
+        const actionUrl = form.getAttribute('action') || '/api/contact';
+        const isHttp = window.location.protocol.startsWith('http');
+
+        if (isHttp) {
           const res = await fetch(actionUrl, {
             method: 'POST',
-            body: formData,
-            headers: { 'Accept': 'application/json' }
+            body: JSON.stringify(payload),
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            }
           });
-          
+
+          // 1. Success from Serverless API
           if (res.ok) {
-            showFormSuccess();
+            const data = await res.json().catch(() => ({}));
+            showFormSuccess(data.message || 'Thank you! Your message has been sent successfully. Rishika will get back to you within 24 hours.');
             form.reset();
-          } else {
-            throw new Error('Formspree response not ok');
+            if (startTimeInput) startTimeInput.value = Date.now().toString();
+            return;
           }
-        } else {
-          // Direct Mailto fallback
-          const mailSubject = encodeURIComponent(`[Portfolio Inquiry] ${projectType} from ${name}`);
-          const mailBody = encodeURIComponent(`Hi Rishika,\n\nName: ${name}\nEmail: ${email}\nProject Type: ${projectType}\n\nMessage:\n${message}\n\nLooking forward to speaking with you!`);
-          
-          window.location.href = `mailto:rishikabagadia@gmail.com?subject=${mailSubject}&body=${mailBody}`;
-          showFormSuccess("Opening your email composer to send directly to Rishika!");
-          form.reset();
+
+          // 2. Rate Limit (429) or Validation Error (400) from Serverless API
+          if (res.status === 429 || res.status === 400) {
+            const errData = await res.json().catch(() => ({}));
+            showFormError(errData.error || 'Unable to send message. Please review your details.');
+            return;
+          }
+
+          // 3. If API is 404 (e.g. static GitHub Pages), fall through to graceful client-side mailto composition
+          if (res.status === 404) {
+            triggerMailtoFallback(name, email, projectType, message);
+            return;
+          }
         }
+
+        // Offline / file:// protocol fallback
+        triggerMailtoFallback(name, email, projectType, message);
+
       } catch (err) {
-        const mailSubject = encodeURIComponent(`[Portfolio Inquiry] ${projectType} from ${name}`);
-        const mailBody = encodeURIComponent(`Hi Rishika,\n\nName: ${name}\nEmail: ${email}\nProject Type: ${projectType}\n\nMessage:\n${message}`);
-        window.location.href = `mailto:rishikabagadia@gmail.com?subject=${mailSubject}&body=${mailBody}`;
-        showFormSuccess("Redirecting to email app...");
+        // Network / CORS / offline fallback
+        triggerMailtoFallback(name, email, projectType, message);
       } finally {
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalBtnText;
       }
     });
 
-    function showFormSuccess(msg = "Thank you! Your message has been sent successfully. Rishika will get back to you within 24 hours.") {
+    function triggerMailtoFallback(name, email, projectType, message) {
+      const recipient = _0xContact.getEmail();
+      const mailSubject = encodeURIComponent(`[Portfolio Inquiry] ${projectType} from ${name}`);
+      const mailBody = encodeURIComponent(`Hi Rishika,\n\nName: ${name}\nEmail: ${email}\nProject Type: ${projectType}\n\nMessage:\n${message}\n\nLooking forward to speaking with you!`);
+      
+      window.location.href = `mailto:${recipient}?subject=${mailSubject}&body=${mailBody}`;
+      showFormSuccess('Opening your email application to send your inquiry directly to Rishika!');
+      form.reset();
+      if (startTimeInput) startTimeInput.value = Date.now().toString();
+    }
+
+    function showFormSuccess(msg = 'Thank you! Your message has been sent successfully. Rishika will get back to you within 24 hours.') {
       if (!feedbackEl) return;
       feedbackEl.className = 'form-feedback success';
       feedbackEl.textContent = msg;
       feedbackEl.style.display = 'block';
       setTimeout(() => {
         feedbackEl.style.display = 'none';
-      }, 6000);
+      }, 7000);
+    }
+
+    function showFormError(msg = 'An error occurred while submitting. Please try again or reach out via email.') {
+      if (!feedbackEl) return;
+      feedbackEl.className = 'form-feedback error';
+      feedbackEl.textContent = msg;
+      feedbackEl.style.display = 'block';
+      setTimeout(() => {
+        feedbackEl.style.display = 'none';
+      }, 7000);
     }
   }
 

@@ -363,11 +363,20 @@ function initContactForm() {
   const form = document.getElementById('contact-form');
   const feedbackEl = document.getElementById('form-feedback');
   const copyEmailBtn = document.getElementById('copy-email-btn');
+  const _0xContactMain = {
+    getEmail() {
+      try {
+        return atob('cmlzaGlrYWJhZ2FkaWE=') + '@' + atob('Z21haWwuY29t');
+      } catch (e) {
+        return 'rishikabagadia@gmail.com';
+      }
+    }
+  };
 
   // One-click copy email
   if (copyEmailBtn) {
     copyEmailBtn.addEventListener('click', async () => {
-      const email = 'rishikabagadia@gmail.com';
+      const email = _0xContactMain.getEmail();
       try {
         await navigator.clipboard.writeText(email);
         const originalText = copyEmailBtn.innerHTML;
@@ -397,6 +406,7 @@ function initContactForm() {
     const email = formData.get('email');
     const projectType = formData.get('projectType') || 'Design Inquiry';
     const message = formData.get('message');
+    const recipient = _0xContactMain.getEmail();
 
     try {
       // If user sets up Formspree endpoint in the form action
@@ -419,7 +429,7 @@ function initContactForm() {
         const mailSubject = encodeURIComponent(`[Portfolio Inquiry] ${projectType} from ${name}`);
         const mailBody = encodeURIComponent(`Hi Rishika,\n\nName: ${name}\nEmail: ${email}\nProject Type: ${projectType}\n\nMessage:\n${message}\n\nLooking forward to hearing from you!`);
         
-        window.open(`mailto:rishikabagadia@gmail.com?subject=${mailSubject}&body=${mailBody}`, '_blank');
+        window.open(`mailto:${recipient}?subject=${mailSubject}&body=${mailBody}`, '_blank');
         showFormSuccess("Message prepared! Opening your mail app to send directly.");
         form.reset();
       }
@@ -427,7 +437,7 @@ function initContactForm() {
       // Direct fallback
       const mailSubject = encodeURIComponent(`[Portfolio Inquiry] ${projectType} from ${name}`);
       const mailBody = encodeURIComponent(`Hi Rishika,\n\nName: ${name}\nEmail: ${email}\nProject Type: ${projectType}\n\nMessage:\n${message}`);
-      window.location.href = `mailto:rishikabagadia@gmail.com?subject=${mailSubject}&body=${mailBody}`;
+      window.location.href = `mailto:${recipient}?subject=${mailSubject}&body=${mailBody}`;
       showFormSuccess("Redirecting to email client...");
     } finally {
       submitBtn.disabled = false;
